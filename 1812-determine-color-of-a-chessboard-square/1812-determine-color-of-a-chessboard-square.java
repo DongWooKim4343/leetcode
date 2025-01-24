@@ -1,33 +1,15 @@
 class Solution {
     public boolean squareIsWhite(String coordinates) {
-        String[] array = coordinates.split("");
-        Boolean answer = true;
-        
-        if(Integer.parseInt(array[1])%2==0){
-            if(array[0].equals("a")){
-                answer = true;
-            }else if(array[0].equals("c")){
-                answer = true;
-            }else if(array[0].equals("e")){
-                answer = true;
-            }else if(array[0].equals("g")){
-                answer = true;
-            }else{
-                answer = false;
-            }
-        }else if(Integer.parseInt(array[1])%2==1){
-            if(array[0].equals("b")){
-                answer = true;
-            }else if(array[0].equals("d")){
-                answer = true;
-            }else if(array[0].equals("f")){
-                answer = true;
-            }else if(array[0].equals("h")){
-                answer = true;
-            }else{
-                answer = false;
-            }
+        int alphabet = coordinates.charAt(0)-'a';
+        int num = coordinates.charAt(1);
+
+        if(alphabet % 2 ==0 && num%2 ==0){
+            return true;
+        }else if(alphabet % 2 ==1 && num%2 ==1){
+            return true;
+        }else{
+            return false;
         }
-        return answer;
+
     }
 }
