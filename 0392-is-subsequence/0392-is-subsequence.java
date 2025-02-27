@@ -2,27 +2,19 @@ import java.util.*;
 
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        String[] sArr = s.split("");
-        String[] tArr = t.split("");
-    
-        String answer="";
-        int index=0;
+        int sPointer =0;
+        int tPointer =0;
 
-        for(int i =0; i<tArr.length; i++){
-        
-            if(index<sArr.length){
-                if(tArr[i].equals(sArr[index])){
-                    answer+=sArr[index++];  
-                }
+        for(int i =0; i<t.length(); i++){
+            if(sPointer<s.length() && tPointer<t.length()){
                 
+                if(t.charAt(tPointer)==s.charAt(sPointer)){
+                    sPointer++;
+                }
+                tPointer++;
             }
             
         }
-        
-        System.out.println(answer);
-
-        
-
-        return answer.equals(s);
+        return sPointer==s.length();
     }
 }
